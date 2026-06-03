@@ -1,0 +1,9 @@
+version: "1.24"
+services:
+  lucky:
+    image: gdy666/lucky:latest
+    container_name: lucky
+    volumes:
+            - /home/ubuntu/docker/lucky:/goodluck  # 替换为实际主机路径
+    network_mode: host
+    restart: always
