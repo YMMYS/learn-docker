@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token eyJhIjoiZGI1MGFhYjVmZmJhZWUwNWI3NjJiZTA2NmJmZGYxZWMiLCJ0IjoiMzRkYTQyNjUtZmZmYS00MzYyLThkYzktY2ZlMDhhM2RlNzliIiwicyI6Ik9UQTBNR1JoTldFdE5qYzNaQzAwWmpGa0xUa3lOV1
+    restart: unless-stopped
+networks:
+  default:
+    external:
+      name: mynet
