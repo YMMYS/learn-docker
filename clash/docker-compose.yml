@@ -38,4 +38,4 @@ networks:
     default: # 这里指的是 docker-compose 的默认网络
     # 这里指的是 docker-compose 的默认网络
     # external:
-       # name: host
+       # name: mynet
