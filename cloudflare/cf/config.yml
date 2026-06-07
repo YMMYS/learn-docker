@@ -1,0 +1,11 @@
+tunnel: 275fe7bb-5948-45a0-bda7-30da7d154ddf
+credentials-file: /root/.cloudflared/275fe7bb-5948-45a0-bda7-30da7d154ddf.json
+
+ingress:
+  - hostname: "lucky.dearjoe.top" # eg：dearjoe.top为你的域名
+    service: http://127.0.0.1:16601
+
+  - hostname: "*.dearjoe.top"
+    service: http://127.0.0.1:8443 # 这一步是为了匹配所有二级域名到部署了lucky的主机上, 在lucky上监听8443端口后去实现web转发
+
+  - service: http_status:404
