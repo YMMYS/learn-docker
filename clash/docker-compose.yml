@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+    clash:
+        image: yikyo/clash.meta
+        restart: always
+        volumes:
+            - ./config/:/etc/.clash.meta.d
+        container_name: clash # 容器名称
+        ports:
+            # 主机http代理端口:容器http代理端口，默认7890
+            # 主机sock5代理端口:容器sock5代理端口，默认7890
+            # 主机REST API端口:容器REST API端口，默认9090
+            - 7890:7890
+            - 7891:7891
+            - 9090:9090 
+            - 7892:7892
+    # mihomo:
+    #     image: metacubex/mihomo
+    #     container_name: clash-meta
+    #     restart: unless-stopped
+    #     environment:
+    #         - TZ=Asia/Shanghai
+    #     volumes:
+    #         - ./mihomo-config:/root/.config/mihomo
+    #     ports:
+    #         - "7890:7890"
+    #         - "7891:7891"
+    #         - "9090:9090"
+
+    yard:
+        image: asnil/yacd-meta
+        container_name: clash-yacd
+        restart: always
+        ports:
+            - 8000:80
+
+networks:
+    default: # 这里指的是 docker-compose 的默认网络
+    # 这里指的是 docker-compose 的默认网络
+    # external:
+       # name: host
