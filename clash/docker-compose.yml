@@ -8,7 +8,7 @@ services:
         container_name: clash # 容器名称
         ports:
             # 主机http代理端口:容器http代理端口，默认7890
-            # 主机sock5代理端口:容器sock5代理端口，默认7890
+            # 主机sock5代理端口:容器sock5代理端口，默认7891
             # 主机REST API端口:容器REST API端口，默认9090
             - 7890:7890
             - 7891:7891
