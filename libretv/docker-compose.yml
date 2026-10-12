@@ -4,7 +4,7 @@ services:
     container_name: libretv
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8899:8899"
     environment:
       - PASSWORD=change-me   # 必填：访问密码，务必修改
       # - PROXY_SECRET=your-secret          # 会话/代理签名密钥，多实例部署建议设置
